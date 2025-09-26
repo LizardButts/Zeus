@@ -31,13 +31,15 @@ class Particle{
     }
     // method to draw individual particle
     draw() {
-        ctx.beginPPath();
+        ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI*2, false);
         ctx.fillStyle = '#00ffff';
         ctx.fill();
     }
     // check particle position, check mouse position, move the particle, draw the particle
     update() {
+        // draw particle
+        this.draw();
         // check if particle is still within canvas
         if (this.x > canvas.width || this.x < 0) {
             this.directionX = -this.directionX;
@@ -67,8 +69,6 @@ class Particle{
         // move particle
         this.x += this.directionX;
         this.y += this.directionY;
-        // draw particle
-        this.draw();
     }
 }
 
