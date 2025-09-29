@@ -2,22 +2,19 @@
         // Local Time
         const today = new Date();
         let h = today.getHours();
-        let h0 = today.getUTCHours();
         let m = today.getMinutes();
-        let m0 = today.getUTCMinutes();
         let s = today.getSeconds();
-        let s0 = today.getUTCSeconds();
         m = checkTime(m);
         s = checkTime(s);
-        m = checkTime(m0);
-        s = checkTime(s0);
-        document.getElementById('localClock').innerHTML = "Local: " + h + ":" + m + ":" + s + ",     ";
+        document.getElementById('localClock').innerHTML = "Local: " + h + ":" + m + ":" + s;
 
         // UTC Time
-        const today0 = today.toUTCString();
-        document.getElementById('UTC-Clock').innerHTML = "UTC: " + h0 + ":" + m0 + ":" + s0 + ",     ";
-
-
+        let h0 = today.getUTCHours();
+        let m0 = today.getUTCMinutes();
+        let s0 = today.getUTCSeconds();
+        m0 = checkTime(m0);
+        s0 = checkTime(s0);
+        document.getElementById('UTC-Clock').innerHTML = "UTC: " + h0 + ":" + m0 + ":" + s0;
 
 
         setTimeout(startTime, 1000);
