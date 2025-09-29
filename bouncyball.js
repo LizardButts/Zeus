@@ -73,8 +73,8 @@ class Circle{
         context.stroke();
         context.fill();
         context.closePath();
-
-        /*context.textAlign = "center";
+        /*
+        context.textAlign = "center";
         context.textBaseline = "middle";
         context.font = "15px Ariel";
         context.fillStyle = "#ff8800";
@@ -188,7 +188,16 @@ let updateCircle = function(){
     }else{
         my_circle1.color = "#ffff00";
     }
+
+    
+    context.textAlign = "right";
+    context.textBaseline = "middle";
+    context.font = "15px Ariel";
+    context.fillStyle = "#00ff15ff";
+    context.fillText("Particles: " + ball_counter, window_width-20,10);
+    context.fillText("Window Size: " + window_width + " x " + window_height, window_width-20,30);
 }
+
 
 init();
 //animate();
