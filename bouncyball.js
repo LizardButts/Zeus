@@ -130,7 +130,7 @@ function makeballs(ball){
     ball.draw(context);
 }
 
-let n_balls = Math.round(Math.pow(window_height*window_width,1/3.5));
+let n_balls = Math.round(window_height*window_width/20000);
 let myballs = [];
 function init(){
     for (var i = 0; i < n_balls; i++){
@@ -154,8 +154,8 @@ function getDist(my_circle1,my_circle2){
     return result;
 }
 
-function distLine(my_circle1,my_circle2){
-        context.strokeStyle = "#00ffffff"
+function distLine(my_circle1,my_circle2,color){
+        context.strokeStyle = color;
         context.lineWidth = 1;
         context.beginPath();
         context.moveTo(my_circle1.xpos,my_circle1.ypos);
@@ -171,20 +171,25 @@ let updateCircle = function(){
     myballs.forEach(element => {
         element.update();
     })
+
+    // Particle Line connectors
+    // Connector length limits
+    let d1 = 100;
+    let d2 = 200;
     for (var i = 0; i < n_balls; i++){
         let ball1 = myballs[i];
         for (var j = 0; j < n_balls; j++){
             let ball2 = myballs[j];
-            if (i!=j & getDist(ball1,ball2)<200){
-                distLine(ball1,ball2);
+            if (i!=j & getDist(ball1,ball2)<d2){
+                distLine(ball1,ball2,"rgba(0,255," + 255*(d2-getDist(ball1,ball2))/d1 + "," + (d2-getDist(ball1,ball2))/d1 + ")");
             }
         }
     }
     
-    // Draw a line between two circles
-    if (getDist(my_circle1,my_circle2)<my_circle1.radius*5){
+    // Draw a line between two hard-coded circles
+    if (getDist(my_circle1,my_circle2)<my_circle1.radius*6){
         my_circle1.color = "#00ff00";
-        distLine(my_circle1,my_circle2)
+        distLine(my_circle1,my_circle2,"#00ff00")
     }else{
         my_circle1.color = "#ffff00";
     }
