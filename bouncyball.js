@@ -18,6 +18,7 @@ canvas.height = window_height;
 canvas.style.background = "rgba(30, 35, 37, 1)"
 
 /* ------------- MOUSE SETTINGS ------------- */
+
 // Get mouse position
 let mouse = {
     x: null,
@@ -37,6 +38,12 @@ window.addEventListener("mousedown", function(event){
     clickActive = 1;
 });
 window.addEventListener("mouseup", function(event){
+    clickActive = 0;
+});
+window.addEventListener("touchstart", function(event){
+    clickActive = 1;
+});
+window.addEventListener("touchend", function(event){
     clickActive = 0;
 });
 
@@ -215,7 +222,7 @@ function animate(){
             }
         }
         if (clickActive == 1){
-            distLine(ball1,mouse,"#f00");
+            distLine(ball1,mouse,"rgba(255, 0, 0," + (window_width-getDist(ball1,mouse))/d1 + ")");
             let ax = (5/getDist(ball1,mouse)) * Math.cos(getAngle(ball1,mouse));
             let ay = (5/getDist(ball1,mouse)) * Math.sin(getAngle(ball1,mouse));
             ball1.dx += ax;
