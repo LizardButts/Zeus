@@ -40,6 +40,7 @@ class Particle{
     update() {
         // draw particle
         this.draw();
+        
         // check if particle is still within canvas
         if (this.x > canvas.width || this.x < 0) {
             this.directionX = -this.directionX;

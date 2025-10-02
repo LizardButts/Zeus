@@ -22,66 +22,6 @@
         <br>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias qui voluptate sequi perferendis exercitationem laborum eveniet rerum doloremque nulla ipsam. Non illo beatae impedit consequatur quasi ipsum blanditiis et voluptatum! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum inventore quia dignissimos impedit ratione a maiores reiciendis modi blanditiis quas, velit fugiat placeat molestiae vel, magnam consequuntur pariatur praesentium quidem. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque impedit voluptatibus animi optio numquam. Saepe ea, deserunt aspernatur id, totam necessitatibus voluptas voluptate provident aut eius tenetur perspiciatis? Est, in?
     </p>
-    <script>
-  const canvas = document.getElementById("canvas");
-  const ctx = canvas.getContext("2d");
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-
-  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
-
-  // Track mouse position
-  window.addEventListener("mousemove", (e) => {
-    mouse.x = e.clientX;
-    mouse.y = e.clientY;
-  });
-
-  class Particle {
-    constructor(x, y) {
-      this.x = x;
-      this.y = y;
-      this.radius = Math.random() * 5 + 2;
-      this.color = "rgba(0, 200, 255, 0.8)";
-      this.speed = 0.05 + Math.random() * 0.05;
-    }
-
-    update() {
-      // Move toward the mouse
-      this.x += (mouse.x - this.x) * this.speed;
-      this.y += (mouse.y - this.y) * this.speed;
-    }
-
-    draw() {
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-      ctx.fillStyle = this.color;
-      ctx.fill();
-    }
-  }
-
-  // Create a bunch of particles
-  let particles = [];
-  for (let i = 0; i < 50; i++) {
-    particles.push(new Particle(Math.random() * canvas.width, Math.random() * canvas.height));
-  }
-
-  // Animation loop
-  function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    for (let p of particles) {
-      p.update();
-      p.draw();
-    }
-    requestAnimationFrame(animate);
-  }
-
-  animate();
-
-  // Handle window resize
-  window.addEventListener("resize", () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  });
-</script>
+    
 </body>
 </html>

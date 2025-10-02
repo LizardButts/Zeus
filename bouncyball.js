@@ -1,7 +1,13 @@
+//  PARTICLE SIMULATOR 
+//  Taylor Raines
+//  20 Sept 2025
+
+
+
+// Get window and canvas settings
+
 let canvas = document.getElementById("canvas");
-
 let context = canvas.getContext("2d");
-
 
 var window_height = window.innerHeight;
 var window_width = window.innerWidth;
@@ -11,20 +17,31 @@ canvas.height = window_height;
 
 canvas.style.background = "rgba(30, 35, 37, 1)"
 
-//get mouse position
+/* ------------- MOUSE SETTINGS ------------- */
+// Get mouse position
 let mouse = {
     x: null,
     y: null,
     radius: (canvas.height/80) * (canvas.width/80)
 }
-
 window.addEventListener('mousemove',
     function(event) {
-        mouse.x = event.x;
-        mouse.y = event.y;
+        mouse.xpos = event.x;
+        mouse.ypos = event.y;
     }
 );
 
+// Listen for mouse clicks and determine if left mouse button is active or not
+let clickActive = 0;
+window.addEventListener("mousedown", function(event){
+    clickActive = 1;
+});
+window.addEventListener("mouseup", function(event){
+    clickActive = 0;
+});
+
+
+/* **** How to draw shapes ****
 // Draw Rectangles
 context.fillStyle = "#059"
 context.fillRect(20, 20, 50, 50)
@@ -51,6 +68,7 @@ context.arc(0,0,70,0,Math.PI*2,false);
 context.fill()
 context.stroke();
 context.closePath();
+*/
 
 class Circle{
     constructor(xpos, ypos, speed, radius, color){
@@ -125,13 +143,13 @@ my_circle2.draw(context);
 
 let ball_counter = 1;
 
+/* --------------- FUNCTIONS --------------- */
 
-function makeballs(ball){
-    ball.draw(context);
-}
+// Populate canvas with particles
+let n_balls = Math.round(window_height*window_width/20000);     // Total number of particles
+let myballs = [];       // Initialize Array of particles
 
-let n_balls = Math.round(window_height*window_width/20000);
-let myballs = [];
+// Populate array of particles
 function init(){
     for (var i = 0; i < n_balls; i++){
         let x_rand = Math.random()*(window_width-50)+25;
@@ -144,7 +162,7 @@ function init(){
     console.log(ball_counter)
 }
 
-
+// Get distance between two points with the xpos & ypos attributes
 function getDist(my_circle1,my_circle2){
     let x1 = my_circle1.xpos;
     let y1 = my_circle1.ypos;
@@ -154,17 +172,29 @@ function getDist(my_circle1,my_circle2){
     return result;
 }
 
-function distLine(my_circle1,my_circle2,color){
-        context.strokeStyle = color;
-        context.lineWidth = 1;
-        context.beginPath();
-        context.moveTo(my_circle1.xpos,my_circle1.ypos);
-        context.lineTo(my_circle2.xpos,my_circle2.ypos);
-        context.stroke();
+// Get angle between two points with the xpos & ypos attributes
+function getAngle(point1,point2){
+    let dx = point2.xpos - point1.xpos;
+    let dy = point2.ypos - point1.ypos;
+    let angle = Math.atan2(dy, dx);
+    return angle;
 }
 
-let updateCircle = function(){
-    requestAnimationFrame(updateCircle);
+// Draw a line between two points with the xpos & ypos attributes
+function distLine(my_circle1,my_circle2,color){
+    context.strokeStyle = color;
+    context.lineWidth = 1;
+    context.beginPath();
+    context.moveTo(my_circle1.xpos,my_circle1.ypos);
+    context.lineTo(my_circle2.xpos,my_circle2.ypos);
+    context.stroke();
+}
+
+
+
+// Animate motion of objects in canvas
+function animate(){
+    requestAnimationFrame(animate);
     context.clearRect(0, 0, window_width, window_height)
     my_circle1.update();
     my_circle2.update();
@@ -184,10 +214,17 @@ let updateCircle = function(){
                 distLine(ball1,ball2,"rgba(0,255," + 255*(d2-getDist(ball1,ball2))/d1 + "," + (d2-getDist(ball1,ball2))/d1 + ")");
             }
         }
+        if (clickActive == 1){
+            distLine(ball1,mouse,"#f00");
+            let ax = (5/getDist(ball1,mouse)) * Math.cos(getAngle(ball1,mouse));
+            let ay = (5/getDist(ball1,mouse)) * Math.sin(getAngle(ball1,mouse));
+            ball1.dx += ax;
+            ball1.dy += ay;
+        }
     }
     
     // Draw a line between two hard-coded circles
-    if (getDist(my_circle1,my_circle2)<my_circle1.radius*6){
+    if (getDist(my_circle1,my_circle2)<my_circle1.radius*10){
         my_circle1.color = "#00ff00";
         distLine(my_circle1,my_circle2,"#00ff00")
     }else{
@@ -203,7 +240,6 @@ let updateCircle = function(){
     context.fillText("Window Size: " + window_width + " x " + window_height, window_width-20,30);
 }
 
-
+/* *** RUN TOP-LEVEL FUNCTIONS *** */
 init();
-//animate();
-updateCircle();
+animate();
