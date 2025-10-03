@@ -21,8 +21,8 @@ canvas.style.background = "rgba(30, 35, 37, 1)"
 
 // Get mouse position
 let mouse = {
-    x: null,
-    y: null,
+    xpos: null,
+    ypos: null,
     radius: (canvas.height/80) * (canvas.width/80)
 }
 window.addEventListener('mousemove',
@@ -34,19 +34,29 @@ window.addEventListener('mousemove',
 
 // Listen for mouse clicks and determine if left mouse button is active or not
 let clickActive = 0;
-window.addEventListener("mousedown", function(event){
+canvas.addEventListener("mousedown", function(event){
     clickActive = 1;
 });
-window.addEventListener("mouseup", function(event){
+canvas.addEventListener("mouseup", function(event){
     clickActive = 0;
 });
-window.addEventListener("touchstart", function(event){
+/*
+canvas.addEventListener("touchstart", function(event){
     clickActive = 1;
 });
-window.addEventListener("touchend", function(event){
+canvas.addEventListener("touchend", function(event){
     clickActive = 0;
 });
-
+*/
+// Mouse wheel controls
+canvas.addEventListener("wheel", function(event){
+    if (event.deltaY < 0){
+        console.log("scroll up");
+    }
+    if (event.deltaY > 0){
+        console.log("scroll down");
+    }
+})
 
 /* **** How to draw shapes ****
 // Draw Rectangles
@@ -225,8 +235,8 @@ function animate(){
             distLine(ball1,mouse,"rgba(255, 0, 0," + (window_width-getDist(ball1,mouse))/d1 + ")");
             let ax = (5/getDist(ball1,mouse)) * Math.cos(getAngle(ball1,mouse));
             let ay = (5/getDist(ball1,mouse)) * Math.sin(getAngle(ball1,mouse));
-            ball1.dx += ax;
-            ball1.dy += ay;
+            ball1.dx -= ax;
+            ball1.dy -= ay;
         }
     }
     

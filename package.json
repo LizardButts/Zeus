@@ -1,0 +1,22 @@
+{
+  "name": "zeus",
+  "version": "1.0.0",
+  "description": "Online Repository where I build my own Cloud",
+  "dependencies": {
+    "three": "^0.139.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LizardButts/Zeus.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LizardButts/Zeus/issues"
+  },
+  "homepage": "https://github.com/LizardButts/Zeus#readme"
+}
