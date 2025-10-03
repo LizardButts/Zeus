@@ -1,22 +1,26 @@
 
-import data from "./jsonLib/links.json" with {type: "json"};
+import data from "./jsonLib/menuLinks.json" with {type: "json"};
 
 function populateMenu(){
     
-    console.log(data);
-
     let text = "<ul class='topnav'>";
-    text += "\n<li><a href='index.html'>Home</a></li>";
-    text += "\n<li><a href="
-    text += "'index.html'"
-    text += ">"+"Home</a></li>";
+    for (let i in data.pages){
+        text += "\n<li><a href="
+        text += "'" + data.links[i] + "'"
+        text += ">"+ data.pages[i] + "</a></li>";
+    }
     text += "\n</ul>";
 
-    document.getElementById('jsonTest').innerHTML = text;
+    document.getElementById('menuBar').innerHTML = text;
 }
 
+console.log("\n\nummmmm\n\n");
 populateMenu();
+
+
 /*
+The loop should produce something that looks like the following: 
+
 <ul class="topnav">
     <li><a href="index.html">Home</a></li>
     <li><a href="3js.html">3js</a></li>

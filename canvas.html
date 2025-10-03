@@ -7,19 +7,19 @@
         <link href="styles.css" type="text/css" rel="stylesheet"/>
         <link rel="icon" type="image/x-icon" href="Assets/capyIcon.ico">
     </head>
+
     <body>
         <header>
         <h1>Bucket of Bugs</h1>
-    <div id="txtClock" style="color: #6ebecc"></div>
-    <script src="scripts/clock.js"></script>
+        <!-- Clocks -->
+        <div id="localClock" style="color: #6ebeccff; text-align: right;"></div>
+        <div id="UTC-Clock" style="color: #6ebecc99; text-align: right;"></div>
+        <script src="scripts/clock.js"></script>
     </header>
 
-    <ul class="topnav">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="tie20.html">TIE-20</a></li>
-        <li><a href="dogVids.html">DOGS</a></li>
-        <li><a href="canvas.html">...bugs...</a></li>
-    </ul>
+    <!-- Menu Bar -->
+    <div id="menuBar" style="color: #6ebeccff; text-align: left;"></div>
+    <script type='module' src="scripts/mainMenu.js"></script>
 
         <canvas id="canvas"></canvas>
     </body>

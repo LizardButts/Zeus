@@ -7,13 +7,18 @@
     <title>TIE-20 Documentation</title>
 </head>
 <body>
-    <button 
-    onclick="document.location='index.html'";
-    position: absolute;
-    left: 90%;
-    top: 10px;
-    >Home</button>
-    <h1>TIE-20</h1>
+    <header>
+        <h1>TIE-20</h1>
+        <!-- Clocks -->
+        <div id="localClock" style="color: #6ebeccff; text-align: right;"></div>
+        <div id="UTC-Clock" style="color: #6ebecc99; text-align: right;"></div>
+        <script src="scripts/clock.js"></script>
+        <!-- Menu Bar -->
+        <div id="menuBar" style="color: #6ebeccff; text-align: left;"></div>
+        <script type='module' src="scripts/mainMenu.js"></script>
+
+    </header>
+
     <h2>DCA</h2>
     <p>
         Here are my notes for the Discharge Cathode Aseembly (DCA).

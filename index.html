@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="stylesheet" type="text/css" href="./styles.css">
     <meta charset="UTF-8">
@@ -7,44 +8,37 @@
     <title>Zeus, Lord of the Clouds!</title>
 
     <link rel="icon" type="image/x-icon" href="Assets/capyIcon.ico">
-
-
 </head>
+
 <body>
-    
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
 
     <header>
-        <h1>Overture</h1>
-    <div id="localClock" style="color: #6ebeccff; text-align: right;"></div>
-    <div id="UTC-Clock" style="color: #6ebecc99; text-align: right;"></div>
-    <script src="scripts/clock.js"></script>
+        <h1>Olympus Overture</h1>
+        <!-- Clocks -->
+        <div id="localClock" style="color: #6ebeccff; text-align: right;"></div>
+        <div id="UTC-Clock" style="color: #6ebecc99; text-align: right;"></div>
+        <script src="scripts/clock.js"></script>
+        <!-- Menu Bar -->
+        <div id="menuBar" style="color: #6ebeccff; text-align: left;"></div>
+        <script type='module' src="scripts/mainMenu.js"></script>
     </header>
 
-    <ul class='topnav'>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="3js.html">3js</a></li>
-        <li><a href="tie20.html">TIE-20</a></li>
-        <li><a href="dogVids.html">DOGS</a></li>
-        <li><a href="canvas.html">...bugs...</a></li>
-    </ul>
-    
-    <div id="jsonTest" style="color: #6ebeccff; text-align: left;"></div>
-    <script type='module' src="scripts/mainMenu.js"></script>
 
+    <!-- Text Body -->
     <h1>Introductory Notes</h1>
-    <p> To make your life easier during development, I recomend running this site through a local server. A lot of javascript functions cannot be sent as local request and need the 'http' or 'https' to function properly.
-        This can be done by installing 'http-server':
-    </p>
-    <p style="color:#ffff00; text-align: center;">npm install http-server -g</p>
-    <p>The '-g' suffix installs it on the entire machine, rather than just that individual code.</p>
-    <p>Then you start the server by running this command in the terminal:</p>
-    <p style="color:#ffff00; text-align: center;">http-server "filepath"</p>
-    <p> Alternatively, you can run 'http-server' after navigating to your desired repository.</p>
+    
+    <div style="outline: 2px solid #999; margin: 1%; background-color: #252525; padding: 1px; text-indent:30px";>
+        <p> To make your life easier during development, I recomend running this site through a local server. A lot of javascript functions cannot be sent as local request and need the 'http' or 'https' to function properly.
+            This can be done by installing 'http-server':
+        </p>
+        <p style="color:#ffff00; text-align: center;">npm install http-server -g</p>
+        <p>The '-g' suffix installs it on the entire machine, rather than just that individual code. Then you start the server by running this command in the terminal:</p>
+        <p style="color:#ffff00; text-align: center;">http-server "filepath"</p>
+        <p> Alternatively, you can simply run <mark style="background-color:#000000; color:#ffff00">'http-server'</mark> after navigating to your desired repository in the terminal.</p>
+        <p style="font-style: italic;">If I ever bothered to learn to use docker, it's likely this would all be irrelavent.</p>
+    </div>
 
-
-
-    <p style="color: rgb(100 100 100)">Welcome to Mount Olympus, home of the gods</p>
 
     <a href="dogVids.html">Hey kid, wanna see some DOGS?</a>
 
