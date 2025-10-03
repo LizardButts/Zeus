@@ -79,7 +79,6 @@ a:hover, a:active {
     background-color: #f00000;
 }
 
-
 #canvas1 {
   position: absolute;
   top: 0; left: 0;
@@ -91,6 +90,9 @@ a:hover, a:active {
 details {
   color: #ff9900;
   margin:2%
+}
+summary {
+  cursor: pointer;
 }
 blockquote {
   background-color: #0000000f;
