@@ -137,10 +137,10 @@ class Circle{
         this.draw(context);
         
         if ( (this.xpos + this.radius) > window_width){
-            this.dx = -this.dx;
+            this.dx = -Math.abs(0.9*this.dx);
         }
         if ( (this.xpos - this.radius) < 0){
-            this.dx = -this.dx;
+            this.dx = Math.abs(0.9*this.dx);
         }
         if ( (this.ypos + this.radius) > window_height){
             this.dy = -(Math.abs(0.9*this.dy));
@@ -148,7 +148,7 @@ class Circle{
             this.dy += this.grav;
         }
         if ( (this.ypos - this.radius) < 0){
-            this.dy = -this.dy;
+            this.dy = (Math.abs(this.dy));
         }
 
         this.xpos += this.dx;
@@ -166,7 +166,7 @@ let ball_counter = 1;
 /* --------------- FUNCTIONS --------------- */
 
 // Populate canvas with particles
-let n_balls = Math.round(window_height*window_width/20000);     // Total number of particles
+let n_balls = Math.round(window_height*window_width/200);     // Total number of particles
 let myballs = [];       // Initialize Array of particles
 
 // Populate array of particles
@@ -230,16 +230,27 @@ function animate(){
         let ball1 = myballs[i];
         for (var j = 0; j < n_balls; j++){
             let ball2 = myballs[j];
-            if (i!=j & getDist(ball1,ball2)<d2){
+            // Draw node lines
+            /*if (i!=j & getDist(ball1,ball2)<d2){
                 distLine(ball1,ball2,"rgba(0,255," + 255*(d2-getDist(ball1,ball2))/d1 + "," + (d2-getDist(ball1,ball2))/d1 + ")");
+            }*/
+            // Particle interactions
+            if (i!=j & getDist(ball1,ball2)<2){
+                distLine(ball1,ball2,"rgba(255,255,0,1)");
+                let ax = (-0.5/getDist(ball1,ball2)) * Math.cos(getAngle(ball1,ball2));
+                let ay = (-0.5/getDist(ball1,ball2)) * Math.sin(getAngle(ball1,ball2));
+                ball1.dx += ax;
+                ball1.dx = 0.9*ball1.dx;
+                ball1.dy += ay;
+                ball1.dy = 0.9*ball1.dy;
             }
         }
         if (clickActive == 1){
             distLine(ball1,mouse,"rgba(255, 0, 0," + (window_width-getDist(ball1,mouse))/d1 + ")");
             let ax = (5/getDist(ball1,mouse)) * Math.cos(getAngle(ball1,mouse));
             let ay = (5/getDist(ball1,mouse)) * Math.sin(getAngle(ball1,mouse));
-            ball1.dx -= ax;
-            ball1.dy -= ay;
+            ball1.dx += ax;
+            ball1.dy += ay;
         }
     }
     
