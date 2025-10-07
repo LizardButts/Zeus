@@ -5,6 +5,7 @@
         "TIE-20",
         "DOGS",
         "...bugs...",
+        "Juice",
         "3js"
     ],
     "links":[
@@ -13,6 +14,7 @@
         "tie20.html",
         "dogVids.html",
         "particles.html",
+        "liquids.html",
         "3js.html"
     ]
 }
