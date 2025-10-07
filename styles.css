@@ -50,19 +50,23 @@ ul.topnav {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  background-color: #333333;
+  /*background-color: #333333;*/
+  background-image: linear-gradient(90deg, #333, #111);
 }
 ul.topnav li a {
   display: block;
   color: #f1f1f1;
-  background-color: #333333;
+  background-color: #ffffff00;
   padding: 14px 16px;
   text-decoration: none;
+  outline-color: #000000ff;
+  outline-width: 1px;
+  outline-style: solid;
 }
 ul.topnav li a:hover, a:active {
   display: block;
   color: #f1f1f1;
-  background-color: #525252;
+  background-color: #ffffff44;
   padding: 14px 16px;
   text-decoration: none;
 }
