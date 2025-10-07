@@ -1,7 +1,7 @@
 {
     "pages":[
         "Home",
-        "Server Portal",
+        "ServerPortal",
         "TIE-20",
         "DOGS",
         "...bugs...",
@@ -9,7 +9,7 @@
     ],
     "links":[
         "index.html",
-        "serverPortal.html",
+        "ServerPortal.html",
         "tie20.html",
         "dogVids.html",
         "particles.html",
