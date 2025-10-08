@@ -116,6 +116,8 @@ class Circle{
         context.fillStyle = "#ff8800";
         context.fillText("Oh my...",this.xpos,this.ypos);
         */
+       /*
+       // Display the velocity components
         context.font = "14px Ariel";
         if (this.dx>0){
             context.fillStyle = "#00ffff";
@@ -131,6 +133,7 @@ class Circle{
             context.fillStyle = "#ff00ff";
         }
         context.fillText("y: " + Math.round(this.dy*100)/100,this.xpos+30,this.ypos+45);
+        */
     }
     update(){
 
@@ -250,8 +253,8 @@ function animate(){
                     ball1.dy = -Math.abs(ball1.dy)*Math.sin(theta);
                 }*/
                 
-                let ax = (-0.5/getDist(ball1,ball2)) * Math.cos(getAngle(ball1,ball2));
-                let ay = (-0.5/getDist(ball1,ball2)) * Math.sin(getAngle(ball1,ball2));
+                let ax = (-0.95/getDist(ball1,ball2)) * Math.cos(getAngle(ball1,ball2));
+                let ay = (-0.95/getDist(ball1,ball2)) * Math.sin(getAngle(ball1,ball2));
                 ball1.dx += ax;
                 ball1.dx = 0.99*ball1.dx;
                 ball1.dy += ay;
@@ -260,7 +263,7 @@ function animate(){
             }
         }
         if (clickActive == 1){
-            distLine(ball1,mouse,"rgba(255, 0, 0," + (window_width-getDist(ball1,mouse))/d1 + ")");
+            distLine(ball1,mouse,"rgba(255, " + 155*(window_width-getDist(ball1,mouse))/d1 + ", 0," + (window_width-getDist(ball1,mouse))/d1 + ")");
             let ax = (5/getDist(ball1,mouse)) * Math.cos(getAngle(ball1,mouse));
             let ay = (5/getDist(ball1,mouse)) * Math.sin(getAngle(ball1,mouse));
             ball1.dx += ax;
