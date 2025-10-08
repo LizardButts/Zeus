@@ -1,20 +1,32 @@
 {
-    "pages":[
-        "Home",
-        "ServerPortal",
-        "TIE-20",
-        "DOGS",
-        "...bugs...",
-        "Juice",
-        "3js"
-    ],
-    "links":[
-        "index.html",
-        "ServerPortal.html",
-        "tie20.html",
-        "dogVids.html",
-        "particles.html",
-        "liquids.html",
-        "3js.html"
+    "menuTop":[
+        {
+            "name": "Home",
+            "link": "index.html"
+        },
+        {
+            "name": "ServerPortal",
+            "link": "ServerPortal.html"
+        },
+        {
+            "name": "TIE-20",
+            "link": "tie20.html"
+        },
+        {
+            "name": "DOGS!",
+            "link": "dogVids.html"
+        },
+        {
+            "name": "...bugs...",
+            "link": "particles.html"
+        },
+        {
+            "name": "Juice",
+            "link": "liquids.html"
+        },
+        {
+            "name": "3js",
+            "link": "3js.html"
+        }
     ]
 }

@@ -4,10 +4,14 @@ import data from "./jsonLib/menuLinks.json" with {type: "json"};
 function populateMenu(){
     
     let text = "<ul class='topnav'>";
-    for (let i in data.pages){
+    for (let i in data.menuTop){
+        console.log(i)
         text += "\n<li><a href="
-        text += "'" + data.links[i] + "'"
-        text += ">"+ data.pages[i] + "</a></li>";
+        console.log(i)
+        text += "'" + data.menuTop[i].link + "'"
+        console.log(i)
+        text += ">"+ data.menuTop[i].name + "</a></li>";
+        console.log(i)
     }
     text += "\n</ul>";
 
@@ -16,7 +20,6 @@ function populateMenu(){
 
 console.log("\n\nummmmm\n\n");
 populateMenu();
-
 
 /*
 The loop should produce something that looks like the following: 
@@ -29,3 +32,4 @@ The loop should produce something that looks like the following:
     <li><a href="canvas.html">...bugs...</a></li>
 </ul>
 */
+
