@@ -234,15 +234,29 @@ function animate(){
             /*if (i!=j & getDist(ball1,ball2)<d2){
                 distLine(ball1,ball2,"rgba(0,255," + 255*(d2-getDist(ball1,ball2))/d1 + "," + (d2-getDist(ball1,ball2))/d1 + ")");
             }*/
+
             // Particle interactions
-            if (i!=j & getDist(ball1,ball2)<2){
-                distLine(ball1,ball2,"rgba(255,255,0,1)");
+            if (i!=j & getDist(ball1,ball2)<2*ball1.radius){
+                distLine(ball1,ball2,"rgba(0,0,255,1)");
+                let theta = getAngle(ball1,ball2);
+                /*if (theta > 1.5*Math.PI || theta < 0.5*Math.PI){
+                    ball1.dx = Math.abs(ball1.dx)*Math.sin(theta);
+                }else{
+                    ball1.dx = -Math.abs(ball1.dx)*Math.sin(theta);
+                }
+                if (theta>Math.PI){
+                    ball1.dy = Math.abs(ball1.dy)*Math.sin(theta);
+                }else{
+                    ball1.dy = -Math.abs(ball1.dy)*Math.sin(theta);
+                }*/
+                
                 let ax = (-0.5/getDist(ball1,ball2)) * Math.cos(getAngle(ball1,ball2));
                 let ay = (-0.5/getDist(ball1,ball2)) * Math.sin(getAngle(ball1,ball2));
                 ball1.dx += ax;
-                ball1.dx = 0.9*ball1.dx;
+                ball1.dx = 0.99*ball1.dx;
                 ball1.dy += ay;
-                ball1.dy = 0.9*ball1.dy;
+                ball1.dy = 0.99*ball1.dy;
+                
             }
         }
         if (clickActive == 1){
