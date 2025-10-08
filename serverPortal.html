@@ -7,8 +7,11 @@
     <title>Server Portal</title>
     <link rel="icon" type="image/x-icon" href="Assets/capyIcon.ico">
 </head>
-<body>
-    <header>
+<body style="background: none;">
+
+    <canvas id="canvas" style="z-index: -1; opacity: 10%; position: absolute; top:0"></canvas>
+    
+    <header style="z-index: 1; background-color: #000;">
         
         <h1>Server Portal</h1>
 
@@ -20,8 +23,8 @@
         <!-- Menu Bar -->
         <div id="menuBar" style="color: #6ebeccff; text-align: left;"></div>
         <script type='module' src="scripts/mainMenu.js"></script>
-
     </header>
+
 
     <h2>Navigation</h2>
     <p>This is where the server links will go</p>
@@ -30,7 +33,13 @@
         <li>JellyFin</li>
         <li>AudiobookShelf</li>
         <li>File Share - Media Submission</li>
-    </ul>
+    </ul>    
+    <button style="z-index: 1;">Push me!</button>
+    
+
     
 </body>
+
+<script src="scripts/bouncyball.js"></script>
+
 </html>

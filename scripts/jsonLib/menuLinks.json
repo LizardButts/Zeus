@@ -17,12 +17,17 @@
             "link": "dogVids.html"
         },
         {
-            "name": "...bugs...",
-            "link": "particles.html"
-        },
-        {
-            "name": "Juice",
-            "link": "liquids.html"
+            "name": "Particle Sim",
+            "link": [
+                {
+                    "name": "...bugs...",
+                    "link": "particles.html"
+                },
+                {
+                    "name": "Juice",
+                    "link": "liquids.html"
+                }
+            ]
         },
         {
             "name": "3js",

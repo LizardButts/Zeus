@@ -5,13 +5,24 @@ function populateMenu(){
     
     let text = "<ul class='topnav'>";
     for (let i in data.menuTop){
-        console.log(i)
-        text += "\n<li><a href="
-        console.log(i)
-        text += "'" + data.menuTop[i].link + "'"
-        console.log(i)
-        text += ">"+ data.menuTop[i].name + "</a></li>";
-        console.log(i)
+        if (Array.isArray(data.menuTop[i].link)){
+            text += "\n<div class=\"dropdown\">"
+            text += "\n<li class=\"drpbtn\"><a>"+ data.menuTop[i].name + "</a></li>";
+            text += "\n<div class=\"dropdown-content\">"
+            for (let j in data.menuTop[i].link){
+                text += "\n<a href="
+                text += "'" + data.menuTop[i].link[j].link + "'"
+                text += ">"+ data.menuTop[i].link[j].name + "</a>";
+                console.log(data.menuTop[i].link[j].name)
+            }
+            text += "</div>";
+            text +="</a>";
+            text += "</div>";
+        }else{
+            text += "\n<li><a href="
+            text += "'" + data.menuTop[i].link + "'"
+            text += ">"+ data.menuTop[i].name + "</a></li>";
+        }
     }
     text += "\n</ul>";
 
