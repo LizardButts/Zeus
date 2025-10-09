@@ -9,6 +9,7 @@ body {
   background-image: linear-gradient(0deg, #3a3a3a, #111);
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 h1 {
   color: rgb(235 235 235);
@@ -43,6 +44,10 @@ button:hover {
 }
 button:active {
   background-color: #9955ff
+}
+
+ul {
+  color: #ffffff
 }
 
 ul.topnav {
