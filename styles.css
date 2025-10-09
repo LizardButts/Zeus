@@ -9,7 +9,7 @@ body {
   background-image: linear-gradient(0deg, #3a3a3a, #111);
   margin: 0;
   padding: 0;
-  height: 100%;
+  min-height: 100vh;
 }
 h1 {
   color: rgb(235 235 235);
@@ -22,6 +22,11 @@ h2 {
   color: rgb(215 215 215);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 150%;
+  margin-left: 2%;
+}h3 {
+  color: rgb(225 225 225);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100%;
   margin-left: 2%;
 }
 p {
