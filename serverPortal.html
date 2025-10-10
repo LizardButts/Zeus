@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <canvas id="canvas" style="z-index: -1; opacity: 50%; position: absolute; top:0"></canvas>
+    <canvas id="canvas" style="z-index: -1; opacity: 50%; position: fixed; top:0; min-height: 100dvh;"></canvas>
     
     <header style="z-index: 1; background-color: #000;">
         
@@ -45,13 +45,17 @@
     
     <h3>Disable ipv6</h3>
     <p>Sometimes ipv6 protocol can drastically reduce internet speeds and it might be worthwhile to disable it using the following code:</p>
-    <div class="box" style="color:#cccccc; outline: 2px solid #ffffff; background-color: #222; padding-left: 1px; margin-left: 50px; width: 100%">
-        <p>
-            sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1 <br>
-            sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1 <br>
-            sudo sysctl -w net.ipv6.conf.lo.disable_ipv6=1</p>
+    <div class="box" style="color:#cccccc; outline: 2px solid #ffffff; background-color: #222; padding-left: 1px; margin-left: 10%; width: 80%">
+        <pre><!-- Code Snippet-->
+            sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1 
+            sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1 
+            sudo sysctl -w net.ipv6.conf.lo.disable_ipv6=1
+        </pre>
     </div>
 
+    <footer style="background-color: #333;">
+        <p>This is the footer info</p>
+    </footer>
     
 </body>
 
