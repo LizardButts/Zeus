@@ -166,3 +166,29 @@ blockquote {
   background-color: #ffffff22;
 }
 
+table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  max-width: 50%;
+  width:auto;
+  color: #f1f1f1;
+  background-color: #121121;
+  margin-left: 10px;
+}
+
+td, th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f233;}
+
+tr:hover {background-color: #ffffff55;}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
