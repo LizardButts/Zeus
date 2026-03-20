@@ -116,8 +116,7 @@ class Circle{
         context.fillStyle = "#ff8800";
         context.fillText("Oh my...",this.xpos,this.ypos);
         */
-       /*
-       // Display the velocity components
+       /* Display the velocity components
         context.font = "14px Ariel";
         if (this.dx>0){
             context.fillStyle = "#00ffff";
