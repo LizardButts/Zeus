@@ -166,3 +166,8 @@ blockquote {
   background-color: #ffffff22;
 }
 
+.card {
+  width: "30%";
+  max-width: 700px;
+  min-width: 600px;
+}
