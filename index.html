@@ -5,7 +5,7 @@
     <link rel="stylesheet" type="text/css" href="./styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zeus, Lord of the Clouds!</title>
+    <title>Rainedeer Ranch</title>
 
     <link rel="icon" type="image/x-icon" href="Assets/capyIcon.ico">
 </head>
@@ -32,21 +32,28 @@
     <!-- Text Body -->
     <h1>Introductory Notes</h1>
     
+    <hr>
+    <h1>HTML Practice Zone</h1>
+    
     <div style="outline: 2px solid #999; margin: 1%; background-color: #252525; padding: 1px; text-indent:30px";>
+        <h2>HTML Testing Environment</h2>
         <p> To make your life easier during development, I recomend running this site through a local server. A lot of javascript functions cannot be sent as local request and need the 'http' or 'https' to function properly. This can be done by installing 'http-server':
         </p>
         <p style="color:#ffff00; text-align: center;">npm install http-server -g</p>
         <p>The '-g' suffix installs it on the entire machine, rather than just that individual code. Then you start the server by running this command in the terminal:</p>
         <p style="color:#ffff00; text-align: center;">http-server "filepath"</p>
-        <p> Alternatively, you can simply run <mark style="background-color:#000000; color:#ffff00">'http-server'</mark> after navigating to your desired repository in the terminal.</p>
+        <p> Alternatively, you can simply run <mark style="background-color:#000000; color:#ffff00">'npx http-server'</mark> after navigating to your desired repository in the terminal. This works particularly well in contained environments such as <mark style="color:#0099ff; background-color:#00000000">github codespaces</mark>.</p>
         <p style="font-style: italic;">If I ever bothered to learn to use <mark style="background-color:#00000000; color:#0099ff">docker</mark>, it's likely this would all be irrelavent.</p>
     </div>
 
+    <h2>HTML & CSS Examples</h2>
+    <p>This section is just to keep track of how to write and format some common objects in html & css.</p>
 
     <a href="dogVids.html">Hey kid, wanna see some DOGS?</a>
 
     <p style="color:aqua">Does this look cool?</p>
     <p style="color:rgb(234, 0, 255)">I think it looks cool.</p>
+    <rss>https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/week.atom</rss>
 
     <p>This is a button that will reveal all the secrets of the Turion Space Corp:</p>
     <button onclick="document.location='turion.html'">TURION</button>
