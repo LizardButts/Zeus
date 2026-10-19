@@ -30,6 +30,10 @@
             ]
         },
         {
+            "name": "Engineering",
+            "link": "engineering.html"
+        },
+        {
             "name": "3js",
             "link": "3js.html"
         }

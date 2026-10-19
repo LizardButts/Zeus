@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rainedeer Ranch</title>
+
+    <link rel="icon" type="image/x-icon" href="Assets/capyIcon.ico">
+    <link rel="stylesheet" href="https://pyscript.net/releases/2026.7.3/core.css" />
+    <script type="module" src="https://pyscript.net/releases/2026.7.3/core.js"></script>
+</head>
+
+<body>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+
+    <header>
+
+        <img src="Assets/Logos/Roscars.png" alt="Academy of Arts and Stuff Logo" width="10%" style="float:left">
+        <h1 style="float:center">Engineering Notes</h1>
+        <!-- Clocks -->
+        <div id="localClock" style="color: #6ebeccff; text-align: right;"></div>
+        <div id="UTC-Clock" style="color: #6ebecc99; text-align: right;"></div>
+        <script src="scripts/clock.js"></script>
+        
+        <!-- Menu Bar -->
+        <div id="menuBar" style="color: #6ebeccff; text-align: left;"></div>
+        <script type='module' src="scripts/mainMenu.js"></script>
+
+    </header>
+
+    <h1>Some unorganized engineering notes</h1>
+    <p>These will all need to be organized at some point, but this is just to get me started porting some of my notes into a more stable and permanent format.</p>
+
+    <div style="outline: 2px solid #999; margin: 1%; background-color: #252525; padding: 1px; text-indent:30px; width:75%;">
+        What does the txt look like in here?
+        <p>And is this better? This seems better.</p>
+    </div>
+    <div style="display:flex">
+        <div style="outline: 2px solid #999; margin: 1%; background-color: #252525; padding: 1px; text-indent:30px; height:200px; overflow: hidden; width:50%;">
+            <a href="https://www.govdeals.com/en/asset/8190/6794" style="float: right; height:100%">
+                <img src="https://webassets.lqdt1.com/assets/photos/6794/6794_8190_f89d5676-53c7-4a13-94c7-3dc645e176cf.jpeg?cb=261008163320&h=480&webp=true", alt="Vac Chamber", style="height:100%">
+            </a>
+            <p>https://www.govdeals.com/en/asset/8190/6794</p>
+        </div>
+        <div style="outline: 2px solid #999; margin: 1%; background-color: #252525; padding: 1px; text-indent:30px; width:40%;">
+            <h2>Python scripts in HTML</h2>
+            <script type="py" config="scripts/python/pyscript.json">
+                import numpy as np
+                import matplotlib.pyplot as plt
+                from pyscript import when, display
+                display("Hello World!")
+                plt.plot([1,2,3],[5,2,4])
+            </script>
+        </div>
+    </div>
+    
+</body>
+</html>
